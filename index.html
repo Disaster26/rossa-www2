@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AMR Architekci & Partnerzy · Lublin</title>
+<meta name="description" content="AMR Architekci & Partnerzy, pracownia architektoniczna w Lublinie od 1997 roku. Obiekty handlowe, biurowe, przemysłowe i mieszkalne. Realizacje, nie wizualizacje.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--tlo:#0E0E0F;--tlo2:#161618;--linia:rgba(255,255,255,.12);--tekst:#F2F0EC;--szary:#A8A49D;--akcent:#D9B48A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--tlo);color:var(--tekst);font-family:Urbanist,system-ui,sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+
+/* naglowek */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(10,10,11,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--linia)}
+header .wrap{display:flex;align-items:center;gap:40px;height:84px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-weight:400;font-size:28px;letter-spacing:.32em}
+.logo small{font-size:9.5px;letter-spacing:.42em;color:var(--szary);margin-top:6px;text-transform:uppercase}
+nav{margin-left:auto;display:flex;gap:34px;font-size:15px}
+nav a{color:#DAD7D1;transition:color .2s}
+nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:13px 26px;font-size:15px;font-weight:500;transition:background .2s,color .2s}
+.btn:hover{background:#fff;color:#0E0E0F}
+.btn.jasny{background:#fff;color:#0E0E0F;border-color:#fff}
+.btn.jasny:hover{background:transparent;color:#fff}
+.btn svg{width:18px;height:18px}
+.burger{display:none;margin-left:auto;background:none;border:0;color:#fff;width:44px;height:44px}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.slajd{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.04);transition:opacity 1.2s ease,transform 7s ease}
+.slajd.on{opacity:1;transform:scale(1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,9,.82) 0%,rgba(8,8,9,.45) 45%,rgba(8,8,9,.1) 75%),linear-gradient(0deg,rgba(8,8,9,.7) 0%,transparent 40%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:84px}
+.ocz{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:#E6E2DB;font-weight:500}
+h1{font-weight:300;font-size:clamp(46px,6.4vw,96px);line-height:1.02;letter-spacing:-.02em;margin:22px 0 26px}
+.lead{font-size:clamp(17px,1.5vw,21px);color:#E3E0DA;max-width:520px}
+.hero .akcje{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap}
+.licznik{position:absolute;right:40px;bottom:44px;z-index:3;display:flex;align-items:center;gap:22px;font-size:17px;color:rgba(255,255,255,.45)}
+.licznik button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:6px 2px;position:relative}
+.licznik button.on{color:#fff}
+.licznik button.on:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#fff}
+.licznik .podpis{min-width:220px;text-align:right;color:#CFCBC4;font-size:14px;letter-spacing:.04em}
+
+/* sekcje */
+section{padding:130px 0}
+.nagl{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px}
+.nagl h2{font-weight:300;font-size:clamp(34px,4vw,58px);line-height:1.05;letter-spacing:-.015em;max-width:760px}
+.nagl p{color:var(--szary);max-width:380px}
+
+.liczby{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--linia);border-bottom:1px solid var(--linia)}
+.liczby div{padding:44px 28px;border-right:1px solid var(--linia)}
+.liczby div:last-child{border-right:0}
+.liczby b{display:block;font-weight:300;font-size:56px;line-height:1}
+.liczby span{display:block;color:var(--szary);margin-top:10px;font-size:15px}
+
+/* realizacje */
+.siatka{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.kafel{position:relative;overflow:hidden;background:var(--tlo2)}
+.kafel img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease}
+.kafel:hover img{transform:scale(1.04)}
+.kafel figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 26px 22px;background:linear-gradient(0deg,rgba(0,0,0,.78),transparent);font-size:17px}
+.kafel figcaption small{display:block;color:#C9C5BE;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.k8{grid-column:span 8;height:520px}.k4{grid-column:span 4;height:520px}
+.k6{grid-column:span 6;height:420px}.k5{grid-column:span 5;height:440px}.k7{grid-column:span 7;height:440px}
+.k3{grid-column:span 3;height:300px}
+
+/* pracownia */
+.dwie{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.dwie img{width:100%;height:600px;object-fit:cover}
+.dwie h2{font-weight:300;font-size:clamp(32px,3.6vw,52px);line-height:1.08;letter-spacing:-.015em;margin:18px 0 26px}
+.dwie p{color:#CFCBC4;margin-bottom:16px;max-width:560px}
+.cytat{border-left:2px solid var(--akcent);padding-left:22px;margin-top:30px;font-size:22px;font-weight:300;color:#fff}
+
+/* zakres */
+.zakres{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linia)}
+.zakres div{padding:40px 30px 40px 0;border-bottom:1px solid var(--linia)}
+.zakres div:nth-child(3n+2),.zakres div:nth-child(3n){padding-left:30px;border-left:1px solid var(--linia)}
+.zakres em{font-style:normal;color:var(--akcent);font-size:14px;letter-spacing:.2em}
+.zakres h3{font-weight:400;font-size:24px;margin:12px 0 8px}
+.zakres p{color:var(--szary);font-size:15.5px}
+
+/* kontakt */
+.kontakt{background:var(--tlo2)}
+.kont{display:grid;grid-template-columns:1.1fr 1fr;gap:70px}
+.kont h2{font-weight:300;font-size:clamp(36px,4.4vw,64px);line-height:1.04;letter-spacing:-.02em}
+.dane{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.dane small{display:block;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--szary);margin-bottom:8px}
+.dane a,.dane span{font-size:19px;display:block}
+.mapa{border:0;width:100%;height:100%;min-height:420px;filter:grayscale(1) invert(.92) contrast(.9)}
+footer{padding:34px 0;border-top:1px solid var(--linia);color:var(--szary);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.uwaga{background:#1c1a17;color:#BDB6AA;font-size:13px;text-align:center;padding:12px 20px}
+
+/* pojawianie */
+.wej{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.wej.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.wej{opacity:1;transform:none}.slajd{transition:opacity .4s}}
+
+@media (max-width:980px){
+ .wrap{padding:0 22px}
+ nav,header .btn{display:none}
+ .burger{display:block}
+ header.otw nav{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:#0E0E0F;border-bottom:1px solid var(--linia)}
+ header.otw nav a{padding:18px 22px;border-top:1px solid var(--linia);font-size:17px}
+ .hero{height:92svh;min-height:600px}
+ .hero:after{background:linear-gradient(0deg,rgba(8,8,9,.9) 10%,rgba(8,8,9,.35) 60%,rgba(8,8,9,.25))}
+ .hero .wrap{justify-content:flex-end;padding-bottom:120px}
+ .licznik{left:22px;right:22px;bottom:36px;justify-content:flex-start}
+ .licznik .podpis{display:none}
+ section{padding:84px 0}
+ .nagl{flex-direction:column;align-items:flex-start;margin-bottom:40px}
+ .liczby{grid-template-columns:1fr 1fr}
+ .liczby div:nth-child(2){border-right:0}
+ .liczby div:nth-child(-n+2){border-bottom:1px solid var(--linia)}
+ .liczby b{font-size:42px}
+ .siatka{gap:12px}
+ .k8,.k4,.k6,.k5,.k7{grid-column:span 12;height:300px}
+ .k3{grid-column:span 6;height:180px}
+ .dwie,.kont{grid-template-columns:1fr;gap:40px}
+ .dwie img{height:340px}
+ .zakres{grid-template-columns:1fr}
+ .zakres div,.zakres div:nth-child(3n+2),.zakres div:nth-child(3n){padding:28px 0;border-left:0}
+ .dane{grid-template-columns:1fr}
+ .mapa{min-height:300px}
+}
+</style>
+</head>
+<body>
+
+<header id="gora">
+ <div class="wrap">
+  <a class="logo" href="#"><b>A·M·R</b><small>Architekci &amp; Partnerzy</small></a>
+  <nav>
+   <a href="#realizacje">Realizacje</a>
+   <a href="#pracownia">Pracownia</a>
+   <a href="#zakres">Zakres</a>
+   <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a class="btn jasny" href="#kontakt">Umów spotkanie</a>
+  <button class="burger" aria-label="Menu" onclick="document.getElementById('gora').classList.toggle('otw')"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+ </div>
+</header>
+
+<section class="hero" style="padding:0">
+ <div class="slajd on" style="background-image:url(img/r09.webp)" data-p="Obiekt handlowo-usługowy · Lublin"></div>
+ <div class="slajd" style="background-image:url(img/r08.webp)" data-p="Kompleks handlowy nocą · Lublin"></div>
+ <div class="slajd" style="background-image:url(img/r03.webp)" data-p="Budynek biurowo-produkcyjny"></div>
+ <div class="wrap">
+  <div class="ocz">Lublin · od 1997 roku</div>
+  <h1>Realizacje,<br>nie wizualizacje.</h1>
+  <p class="lead">Projektujemy galerie handlowe, biurowce, hale i budynki mieszkalne. Wszystko, co widać na tej stronie, stoi i działa.</p>
+  <div class="akcje">
+   <a class="btn" href="#realizacje">Zobacz realizacje <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+ </div>
+ <div class="licznik">
+  <button class="on" data-i="0">01</button><button data-i="1">02</button><button data-i="2">03</button>
+  <span class="podpis" id="podpis">Obiekt handlowo-usługowy · Lublin</span>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="liczby wej">
+   <div><b>1997</b><span>rok założenia pracowni</span></div>
+   <div><b>4</b><span>architektów w zespole</span></div>
+   <div><b>7</b><span>galerii handlowych</span></div>
+   <div><b>100%</b><span>projektów pełnobranżowych</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="realizacje" style="padding-top:0">
+ <div class="wrap">
+  <div class="nagl wej">
+   <h2>Wybrane realizacje</h2>
+   <p>Obiekty zbudowane i oddane do użytku. Od galerii handlowych po zakłady produkcyjne.</p>
+  </div>
+  <div class="siatka">
+   <figure class="kafel k8 wej"><img src="img/r17.webp" alt="Galeria Venus" loading="lazy"><figcaption><small>Świdnik</small>Galeria Venus</figcaption></figure>
+   <figure class="kafel k4 wej"><img src="img/r06.webp" alt="Elewacja budynku biurowego" loading="lazy"><figcaption><small>Detal</small>Elewacja biurowca</figcaption></figure>
+   <figure class="kafel k6 wej"><img src="img/r11.webp" alt="Obiekt handlowy nocą" loading="lazy"><figcaption><small>Lublin</small>Obiekt handlowo-usługowy</figcaption></figure>
+   <figure class="kafel k6 wej"><img src="img/r04.webp" alt="Budynek biurowy z lotu ptaka" loading="lazy"><figcaption><small>Biuro i produkcja</small>Budynek biurowy przy hali</figcaption></figure>
+   <figure class="kafel k5 wej"><img src="img/r13.webp" alt="Wnętrze galerii handlowej" loading="lazy"><figcaption><small>Wnętrze</small>Pasaż galerii handlowej</figcaption></figure>
+   <figure class="kafel k7 wej"><img src="img/r10.webp" alt="Galeria handlowa wieczorem" loading="lazy"><figcaption><small>Lublin</small>Centrum handlowe</figcaption></figure>
+   <figure class="kafel k3 wej"><img src="img/r19.webp" alt="Hala magazynowa" loading="lazy"><figcaption><small>Przemysł</small>Hala z zapleczem</figcaption></figure>
+   <figure class="kafel k3 wej"><img src="img/r14.webp" alt="Budynek usługowy" loading="lazy"><figcaption><small>Usługi</small>Salon i biuro</figcaption></figure>
+   <figure class="kafel k3 wej"><img src="img/r07.webp" alt="Wnętrze hali produkcyjnej" loading="lazy"><figcaption><small>Przemysł</small>Hala produkcyjna</figcaption></figure>
+   <figure class="kafel k3 wej"><img src="img/r16.webp" alt="Galeria Venus panorama" loading="lazy"><figcaption><small>Świdnik</small>Venus, panorama</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section id="pracownia" style="background:var(--tlo2)">
+ <div class="wrap dwie">
+  <img class="wej" src="img/r05.webp" alt="Budynek biurowy zaprojektowany przez pracownię" loading="lazy">
+  <div class="wej">
+   <div class="ocz">Pracownia</div>
+   <h2>Od koncepcji do projektu pełnobranżowego.</h2>
+   <p>AMR Architekci &amp; Partnerzy to rodzinna pracownia z Lublina, prowadzona przez Agnieszkę i Mirosława Rossów. W zespole jest czterech architektów, a przy projektach pracujemy ze stałymi branżystami: elektryka, instalacje, konstrukcja, teletechnika.</p>
+   <p>Prowadzimy temat od opracowania studialnego, przez koncepcję i projekt architektoniczny, po pełną dokumentację budowlaną. Jesteśmy członkami Lubelskiej Okręgowej Izby Architektów i SARP.</p>
+   <p class="cytat">„Inne biura pokazują wizualizacje. My pokazujemy budynki, które stoją.”</p>
+  </div>
+ </div>
+</section>
+
+<section id="zakres">
+ <div class="wrap">
+  <div class="nagl wej"><h2>Co projektujemy</h2><p>Obiekty, które muszą działać na co dzień: dla klientów, pracowników i inwestora.</p></div>
+  <div class="zakres wej">
+   <div><em>01</em><h3>Obiekty handlowe</h3><p>Galerie, centra handlowe, salony i lokale usługowe.</p></div>
+   <div><em>02</em><h3>Biurowce</h3><p>Budynki biurowe, siedziby firm, przestrzenie pracy.</p></div>
+   <div><em>03</em><h3>Przemysł</h3><p>Hale produkcyjne i magazynowe, zakłady z zapleczem.</p></div>
+   <div><em>04</em><h3>Budynki mieszkalne</h3><p>Domy jednorodzinne i budynki wielorodzinne.</p></div>
+   <div><em>05</em><h3>Użyteczność publiczna</h3><p>Obiekty sportowe, naukowe i usługowe.</p></div>
+   <div><em>06</em><h3>Urbanistyka</h3><p>Koncepcje zagospodarowania i opracowania studialne.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+ <div class="wrap kont">
+  <div class="wej">
+   <div class="ocz">Kontakt</div>
+   <h2 style="margin-top:18px">Porozmawiajmy<br>o Twoim projekcie.</h2>
+   <div class="dane">
+    <div><small>Telefon</small><a href="tel:+48501061258">+48 501 061 258</a><a href="tel:+48817428658">+48 81 742 86 58</a></div>
+    <div><small>E-mail</small><a href="mailto:rossa@rossa.pl">rossa@rossa.pl</a></div>
+    <div><small>Adres</small><span>ul. Zbożowa 6<br>20-827 Lublin</span></div>
+    <div><small>Dojazd</small><a href="https://www.google.com/maps/dir/?api=1&destination=51.26825,22.50471" target="_blank" rel="noopener">Wyznacz trasę →</a></div>
+   </div>
+  </div>
+  <iframe class="mapa wej" loading="lazy" title="Mapa dojazdu" src="https://www.openstreetmap.org/export/embed.html?bbox=22.494%2C51.263%2C22.516%2C51.273&layer=mapnik&marker=51.26825%2C22.50471"></iframe>
+ </div>
+</section>
+
+<footer><div class="wrap"><span>© AMR Architekci &amp; Partnerzy · Lublin</span><span>NIP 946 182 70 50</span></div></footer>
+<div class="uwaga">Wersja koncepcyjna 2 do rozmowy o nowej stronie · zdjęcia z wizytówki pracowni w Panoramie Firm, docelowo do wymiany na oryginały · strona nie jest zgłoszona do wyszukiwarek</div>
+
+<script>
+(function(){
+ var s=[].slice.call(document.querySelectorAll('.slajd')),b=[].slice.call(document.querySelectorAll('.licznik button')),p=document.getElementById('podpis'),i=0,t;
+ function idz(n){s[i].classList.remove('on');b[i].classList.remove('on');i=n;s[i].classList.add('on');b[i].classList.add('on');p.textContent=s[i].dataset.p;start();}
+ function start(){clearTimeout(t);t=setTimeout(function(){idz((i+1)%s.length)},6000);}
+ b.forEach(function(x){x.addEventListener('click',function(){idz(+x.dataset.i)})});start();
+ var io='IntersectionObserver' in window?new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'}):null;
+ document.querySelectorAll('.wej').forEach(function(e){io?io.observe(e):e.classList.add('on')});
+ document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('gora').classList.remove('otw')})});
+})();
+</script>
+</body>
+</html>
